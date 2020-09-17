@@ -1,0 +1,65 @@
+.booking {
+    padding-top: 100px;
+}
+
+.bookingArea {
+    border-top: 1px solid lightgray;
+}
+
+.guests {
+    color: #353535;
+    font-size: 15px;
+    font-weight: 400;
+    margin-top: 20px;
+}
+
+.staySpot {
+    font-size: 25px;
+    font-weight: 700;
+}
+
+.hotel-area {
+    width: 50%;
+    font-size: 15px;
+    color: gray;
+}
+
+.map-area {
+    width: 50%;
+}
+
+.hotelImage {
+    width: 75%;
+}
+
+.hotelImage img {
+    width: 95%;
+    padding-right: 5%;
+}
+
+.hotel-name {
+    font-size: 17px;
+}
+
+.hotel-rate p {
+    margin: 0;
+}
+
+.hotel-rate img {
+    width: 15px;
+}
+
+.hotel-price {
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.text-rate {
+    font-weight: 600;
+}
+
+.mapImage {
+    width: 85%;
+    margin-left: 15%;
+    height: 620px;
+}

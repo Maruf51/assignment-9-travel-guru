@@ -1,0 +1,74 @@
+.loginCreateForm {
+    margin: auto !important;
+    border: 1px solid #b1b1b1;
+    padding: 25px 40px;
+}
+
+.loginArea {
+    padding-top: 150px;
+}
+
+.loginCreateFormInput {
+    background: none;
+    border-bottom: 2px solid lightgray;
+    padding: 5px 0;
+    margin-top: 25px;
+}
+
+.loginCreateFormInput::placeholder {
+    color: black;
+    font-weight: 400;
+}
+
+.checkboxRemember {
+    float: left;
+    width: 12px;
+    margin: 0;
+}
+
+.rememberMe {
+    float: left;
+    margin: 0;
+    margin-left: 5px;
+    color: black;
+}
+
+.loginCreateBtn {
+    margin-top: 20px;
+    width: 100%;
+    padding: 10px 20px;
+}
+
+.dontHaveAccount {
+    font-size: 14px;
+    margin-top: 10px;
+    margin-bottom: 5px;
+}
+
+.orSection {
+    width: 29%;
+    color: black;
+    text-align: center;
+    margin: auto;
+    padding: 15px 0;
+}
+
+hr {
+    border-top: 1px solid #b1b1b1;
+}
+
+.googleFbSignIn {
+    width: 31%;
+    margin: 10px auto;
+    border: 1px solid #b1b1b1;
+    border-radius: 25px;
+    height: auto;
+    padding: 6px;
+    cursor: pointer;
+}
+
+.googleFbImage {
+    width: 25px;
+    height: auto;
+    float: left;
+}

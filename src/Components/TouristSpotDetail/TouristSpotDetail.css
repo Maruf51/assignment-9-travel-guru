@@ -1,0 +1,61 @@
+.detailsArea {
+    height: 87%;
+}
+
+.detailTextArea {
+    width: 40%;
+    margin-right: 5%;
+    margin-left: 5%;
+}
+
+.detailFormArea {
+    width: 35%;
+    margin-left: 5%;
+    margin-right: 5%;
+    background-color: white;
+    color: gray;
+    border-radius: 3px;
+    padding: 20px;t: 5%;
+}
+
+label {
+    display: block;
+}
+
+input {
+    display: block;
+    border: 0;
+    background-color: #e4e4e4;
+    width: 100%;
+    padding: 10px 20px;
+    font-weight: 600;
+    margin-bottom: 10px;
+    border-radius: 3px;
+}
+
+input:focus {
+    outline-color: #98cbff;
+}
+
+.startBookingBtn {
+    margin-top: 10px;
+    width: 100%;
+    padding: 10px 20px;
+}
+
+.spotName {
+    font-size: 50px;
+}
+
+.spotDetail {
+    font-size: 15px;
+    color: #cecece;
+}
+
+.dateFrom {
+    width: 48%;
+}
+
+.dateTo {
+    width: 48%;
+}
