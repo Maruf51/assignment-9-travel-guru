@@ -20,52 +20,33 @@ const CreateAccount = () => {
         success: false,
         error: ''
     });
-    console.log(userData);
 
     const handleValueChange = (e) => {
-            let isValid = true;
-            if(e.target.name === 'email'){ // email validation
-                isValid = /\S+@\S+\.\S+/.test(e.target.value);
-            }
-            if(e.target.name === 'password'){ // password validation
-                isValid = e.target.value.length > 5;
-            }
-            if(isValid){
-                const newUser = {...userData}
-                newUser[e.target.name] = e.target.value;
-                setUserData(newUser);
-            }
+        const newUserData = {...userData}
+        newUserData[e.target.name] = e.target.value;
+        setUserData(newUserData);
     }
 
     const handleCreateAccount = (e) => {
         e.preventDefault();
 
         
-        if(userData.firstName && userData.lastName && userData.email){ // for checking email validate or not
-            if(userData.password){ // for checking password validate or not
+        if(userData.firstName && userData.lastName && userData.email && userData.password && userData.confirmPassword){
                 if(userData.password === userData.confirmPassword){ // for checking password or confirm password are same
                     createNewAccount(userData.email, userData.password)
                     .then(data => {
-                        setUser(data)
                         userInfo(userData)
                         setUserData(data)
                     })
                 }
                 else{
-                    alert('Password and Confirm Password did not match')
+                    alert("Password and Confirm PassWord didn't match")
                 }
-            }
-            else{
-                alert('Password must be 6 digit or higher')
-            }
-        }
-        else{
-            alert('Please check the email is valid or not.')
         }
     }
 
     const userInfo = () => { // for updating user info with name
-        createUserInfo(userData.firstName, userData.lastName, userData.password)
+        createUserInfo(userData.firstName, userData.lastName)
     }
 
     const handleGoogleSignIN = () => {
@@ -75,6 +56,7 @@ const CreateAccount = () => {
             if(data.isSignedIn === true){
                 history.replace(from);
             }
+            setUserData(data)
         })
     }
 
@@ -85,6 +67,7 @@ const CreateAccount = () => {
             if(data.isSignedIn === true){
                 history.replace(from);
             }
+            setUserData(data)
         })
     }
 
@@ -93,16 +76,16 @@ const CreateAccount = () => {
         <div onSubmit={handleCreateAccount} className="createAccount">
             <form className="loginCreateForm detailFormArea" action="">
                 <h2 className="text-dark">Create an account</h2>
-                <input className="loginCreateFormInput" type="text" name="firstName" onChange={handleValueChange} placeholder="First Name" required/>
-                <input className="loginCreateFormInput" type="text" name="lastName" onChange={handleValueChange} placeholder="Last Name" required/>
-                <input className="loginCreateFormInput" type="text" name="email" onChange={handleValueChange} placeholder="Username or Email" required/>
-                <input className="loginCreateFormInput" type="password" name="password" onChange={handleValueChange} placeholder="Password" required/>
-                <input className="loginCreateFormInput" type="password" name="confirmPassword" onChange={handleValueChange} placeholder="Confirm Password" required/>
+                <input className="loginCreateFormInput" type="text" name="firstName" onBlur={handleValueChange} placeholder="First Name" required/>
+                <input className="loginCreateFormInput" type="text" name="lastName" onBlur={handleValueChange} placeholder="Last Name" required/>
+                <input className="loginCreateFormInput" type="text" name="email" onBlur={handleValueChange} placeholder="Username or Email" required/>
+                <input className="loginCreateFormInput" type="password" name="password" onBlur={handleValueChange} placeholder="Password" required/>
+                <input className="loginCreateFormInput" type="password" name="confirmPassword" onBlur={handleValueChange} placeholder="Confirm Password" required/>
                 {
                     userData.success ? <p className="text-success text-center m-0">Account created successfully. Please login</p> : <p className="text-danger text-center m-0">{userData.error}</p>
                 }
                 <button type="submit" className="btn btn-warning loginCreateBtn">Create an account</button>
-                <p className="text-dark dontHaveAccount text-center">Already have an account?<Link to="/login" className="text-warning">Login</Link></p>
+                <p className="text-dark dontHaveAccount text-center">Already have an account?<Link to="/login" className="text-warning ml-1">Login</Link></p>
                 </form>
 
                 <div className="orSection">

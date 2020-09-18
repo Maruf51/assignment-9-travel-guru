@@ -50,6 +50,7 @@ const Login = () => {
             if(data.isSignedIn === true){
                 history.replace(from);
             }
+            setData(data)
         })
     }
 
@@ -60,6 +61,7 @@ const Login = () => {
             if(data.isSignedIn === true){
                 history.replace(from);
             }
+            setData(data)
         })
     }
     

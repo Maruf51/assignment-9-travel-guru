@@ -20,7 +20,15 @@ import "firebase/auth";
             return signedInUser;
         })
         .catch(function(error) {
-            console.log(error.message)
+            const signedInUser = {
+                isSignedIn: false,
+                name: '',
+                email: '',
+                photo: '',
+                success: false,
+                error: error.message
+              };
+            return signedInUser;
         });
     }
 
@@ -44,7 +52,7 @@ import "firebase/auth";
                 email: '',
                 photo: '',
                 success: false,
-                error: ''
+                error: error.message
             }
             return signedInUser;
         })
@@ -54,10 +62,6 @@ import "firebase/auth";
         return firebase.auth().createUserWithEmailAndPassword(email, password)
           .then(res => {
             const userInfo = {
-                isSignedIn: false,
-                displayName: '',
-                email: '',
-                photo: '',
                 success: true,
                 error: ''
             }
@@ -65,10 +69,6 @@ import "firebase/auth";
           })
           .catch(function(error) {
             const userInfo = {
-                isSignedIn: false,
-                displayName: '',
-                email: '',
-                photo: '',
                 success: false,
                 error: error.message
             }
@@ -76,16 +76,15 @@ import "firebase/auth";
           });
     }
 
-    export const createUserInfo = (firstName, lastName, password) => {
-        var user = firebase.auth().currentUser;
+    export const createUserInfo = (firstName, lastName) => {
+        var users = firebase.auth().currentUser;
 
-        user.updateProfile({
-        displayName: firstName + ' ' + lastName,
-        password: password
+        users.updateProfile({
+        displayName: firstName + ' ' + lastName
         }).then(function() {
         
         }).catch(function(error) {
-
+            
         });
     }
 
@@ -108,30 +107,8 @@ import "firebase/auth";
                 success: false,
             }
             return userInfo;
-            // var errorCode = error.code;
-            // var errorMessage = error.message;
-            // const newUser = {...user};
-            // newUser.error = error.message;
-            // newUser.success = false;
-            // setUser(newUser);
           });
     }
-
-    // export const updateUserinfo = (userInfo) => {
-    //     var user = firebase.auth().currentUser;
-
-    //     user.updateProfile({
-    //     displayName: userInfo.firstName + ' ' + userInfo.lastName,
-    //     firstName: userInfo.firstName,
-    //     lastName: userInfo.lastName,
-    //     password: userInfo.password
-    //     }).then(function() {
-        
-    //     }
-    //     ).catch(function(error) {
-
-    //     });
-    // }
 
     export const userLoggedOut = () => {
         return firebase.auth().signOut()
