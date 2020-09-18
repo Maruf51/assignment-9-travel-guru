@@ -39,8 +39,8 @@ const CreateAccount = () => {
                             userInfo(userData)
                         }
                         const newData = {...userData}
-                        newData.success = data.success;
-                        newData.error = data.error;
+                            newData.success = data.success;
+                            newData.error = data.error;
                         setUserData(newData)
                     })
                 }

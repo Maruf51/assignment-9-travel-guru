@@ -104,6 +104,7 @@ import "firebase/auth";
         })
         .catch(function(error) {
             const userInfo = {
+                isSignedIn: false,
                 error: error.message,
                 success: false,
             }

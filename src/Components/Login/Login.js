@@ -16,11 +16,11 @@ const Login = () => {
     const [data, setData] = useState({
         email: '',
         password: '',
-        emailEmpty: '',
-        passwordEmpty: '',
         error: '',
         success: false,
     });
+
+    console.log(data)
 
     // for pushing input value in data
     const handleValueChange = (e) => {
@@ -35,7 +35,11 @@ const Login = () => {
         handleLogin(data.email, data.password)
         .then(userData => {
             setUser(userData)
-            setData(userData);
+            const newData = {...data}
+                newData.isSignedIn = userData.isSignedIn;
+                newData.error = userData.error;
+                newData.success = userData.success;
+            setData(newData);
             if(userData.isSignedIn === true){
                 history.replace(from);
             }
