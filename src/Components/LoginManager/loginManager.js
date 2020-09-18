@@ -72,6 +72,7 @@ import "firebase/auth";
                 success: false,
                 error: error.message
             }
+            // console.log(error)
             return userInfo;
           });
     }

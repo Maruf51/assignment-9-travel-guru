@@ -35,7 +35,9 @@ const CreateAccount = () => {
                 if(userData.password === userData.confirmPassword){ // for checking password or confirm password are same
                     createNewAccount(userData.email, userData.password)
                     .then(data => {
-                        userInfo(userData)
+                        if(data.success){
+                            userInfo(userData)
+                        }
                         setUserData(data)
                     })
                 }
