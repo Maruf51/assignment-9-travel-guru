@@ -7,6 +7,7 @@ import { Link } from 'react-router-dom';
 const TouristSpot = () => {
     const [spotData, setSpotData] = useContext(TouristSpotData)
 
+    // for dynamic background image
     const touristSpotBackground = {
         backgroundImage: `linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url(${spotData.bgURL})`
     }
@@ -25,7 +26,7 @@ const TouristSpot = () => {
             <div className="text-white spotTextArea">
                 <h1 className="spotName">{spotData.name}</h1>
                 <p className="spotDetail">{spotData.shortDetail}</p>
-                <Link to={'/' + spotData.nickName}><button className="btn btn-warning">Booking 🠪</button></Link>
+                <Link to={'/details/' + spotData.nickName}><button className="btn btn-warning">Booking 🠪</button></Link>
             </div>
             <div className="spotImgArea">
                 <div onClick={() => setSpotData(fakeData[0])} className="spotImg" style={coxBazarStyle}>

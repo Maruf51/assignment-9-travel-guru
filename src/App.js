@@ -28,9 +28,9 @@ function App() {
 
   return (
     <TouristSpotData.Provider value={[spotData, setSpotData]}>
-      <LoggedInUser.Provider value={[user, setUser]}>
+      <LoggedInUser.Provider value={[user, setUser]}> 
         <Router>
-          <Navbar color='white'></Navbar>
+          <Navbar></Navbar>
           <Switch>
             <Route path="/login">
               <Login></Login>
@@ -41,7 +41,7 @@ function App() {
             <Route path='/create-new-account'>
               <CreateAccount></CreateAccount>
             </Route>
-            <Route path="/:nickName">
+            <Route path="/details/:nickName">
               <TouristSpotDetail></TouristSpotDetail>
             </Route>
             <Route exact path="/">

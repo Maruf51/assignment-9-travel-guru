@@ -1,5 +1,0 @@
-var sreeMangal = {
-    name: 'SREEMANGAL', nickName: 'sreemangal', id: 2, shortDetail: 'Madhobpur Lake is one of the main tourist attractions in the area,[3][4][5] and is home to the Great White-Bellied Heron, the only confirmed site in Bangladesh.', detail: 'Madhobpur Lake is one of the main tourist attractions in the area,[3][4][5] and is home to the Great White-Bellied Heron, the only confirmed site in Bangladesh.[6] The Baikka beel is also a nearby body of water and home to the Large-billed reed warbler.[7] Sreemangal has been nicknamed the tea capital of Bangladesh, due to the number of tea gardens in the area, and is the place of origin of the Seven Color Tea.', imgURL: "https://i.ibb.co/Jy9kKzs/Sreemongol.png", bgURL: "https://i.ibb.co/KKPTgjx/sreemangalbg.jpg"
-}
-
-export default sreeMangal;

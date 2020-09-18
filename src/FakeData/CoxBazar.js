@@ -1,5 +1,0 @@
-var coxBazar = {
-    name: "COX'S BAZAR", nickName: 'coxbazar', id: 1, shortDetail: "Cox's Bazar is a city, fishing port, tourism centre and district headquarters in southeastern Bangladesh. It is famous mostly for its long natural sandy beach.", detail: `Cox's Bazar is a city, fishing port, tourism centre and district headquarters in southeastern Bangladesh. It is famous mostly for its long natural sandy beach, and it is infamous for the largest refugee camp in the world. It is located 150 km (93 mi) south of the divisional headquarter city of Chittagong. Cox's Bazar is also known by the name Panowa, which translates literally as "yellow flower". Another old name was "Palongkee".`, imgURL: "https://i.ibb.co/m8TVvGB/cox-bazar.jpg", bgURL: "https://i.ibb.co/HxW3Wpr/Rectangle-1.png"
-}
-
-export default coxBazar;

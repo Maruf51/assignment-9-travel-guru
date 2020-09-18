@@ -21,13 +21,12 @@ const Login = () => {
         error: '',
         success: false,
     });
-    // console.log(data)
-    console.log(user)
 
+    // for pushing input value in data
     const handleValueChange = (e) => {
-            const newData = {...data}
-            newData[e.target.name] = e.target.value;
-            setData(newData);
+        const newData = {...data}
+        newData[e.target.name] = e.target.value;
+        setData(newData);
     }
 
       const handleEmailLogin = (e) => {

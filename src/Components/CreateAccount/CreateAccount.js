@@ -24,10 +24,10 @@ const CreateAccount = () => {
 
     const handleValueChange = (e) => {
             let isValid = true;
-            if(e.target.name === 'email'){
+            if(e.target.name === 'email'){ // email validation
                 isValid = /\S+@\S+\.\S+/.test(e.target.value);
             }
-            if(e.target.name === 'password'){
+            if(e.target.name === 'password'){ // password validation
                 isValid = e.target.value.length > 5;
             }
             if(isValid){
@@ -41,9 +41,9 @@ const CreateAccount = () => {
         e.preventDefault();
 
         
-        if(userData.firstName && userData.lastName && userData.email){
-            if(userData.password){
-                if(userData.password === userData.confirmPassword){
+        if(userData.firstName && userData.lastName && userData.email){ // for checking email validate or not
+            if(userData.password){ // for checking password validate or not
+                if(userData.password === userData.confirmPassword){ // for checking password or confirm password are same
                     createNewAccount(userData.email, userData.password)
                     .then(data => {
                         setUser(data)
@@ -64,7 +64,7 @@ const CreateAccount = () => {
         }
     }
 
-    const userInfo = () => {
+    const userInfo = () => { // for updating user info with name
         createUserInfo(userData.firstName, userData.lastName, userData.password)
     }
 
