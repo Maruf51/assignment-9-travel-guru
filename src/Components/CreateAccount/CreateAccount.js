@@ -38,7 +38,10 @@ const CreateAccount = () => {
                         if(data.success){
                             userInfo(userData)
                         }
-                        setUserData(data)
+                        const newData = {...userData}
+                        newData.success = data.success;
+                        newData.error = data.error;
+                        setUserData(newData)
                     })
                 }
                 else{
