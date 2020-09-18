@@ -20,7 +20,7 @@ const Navbar = () => {
             <div className="navbar-right-side d-flex justify-content-center">
                 <div className="search-box">
                     <input className="search-bar" type="text" placeholder="Search your Destination..."/>
-                    <img className="search-icon" src="https://i.ibb.co/ZN8X8RX/search.png" alt=""/>
+                    <img className="search-icon" src="https://i.ibb.co/Lr4sRmD/search.png" alt=""/>
                 </div>
                 <div className="d-flex align-items-center">
                     <div className="btn text-white p-0 mx-4 navbar-button">News</div>

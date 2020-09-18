@@ -37,8 +37,16 @@ import "firebase/auth";
             };
             return signedInUser;
         })
-        .catch(function(error) {
-            console.log(error.message)
+        .catch(error => {
+            const signedInUser ={
+                isSignedIn: false,
+                name: '',
+                email: '',
+                photo: '',
+                success: false,
+                error: ''
+            }
+            return signedInUser;
         })
     }
 

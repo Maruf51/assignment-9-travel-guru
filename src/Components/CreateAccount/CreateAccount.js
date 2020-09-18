@@ -23,24 +23,44 @@ const CreateAccount = () => {
     console.log(userData);
 
     const handleValueChange = (e) => {
-            const newData = {...userData}
-            newData[e.target.name] = e.target.value;
-            setUserData(newData);
+            let isValid = true;
+            if(e.target.name === 'email'){
+                isValid = /\S+@\S+\.\S+/.test(e.target.value);
+            }
+            if(e.target.name === 'password'){
+                isValid = e.target.value.length > 5;
+            }
+            if(isValid){
+                const newUser = {...userData}
+                newUser[e.target.name] = e.target.value;
+                setUserData(newUser);
+            }
     }
 
     const handleCreateAccount = (e) => {
         e.preventDefault();
 
-        if(userData.password === userData.confirmPassword){
-            createNewAccount(userData.email, userData.password)
-            .then(data => {
-                setUser(data)
-                userInfo(userData)
-                setUserData(data)
-            })
+        
+        if(userData.firstName && userData.lastName && userData.email){
+            if(userData.password){
+                if(userData.password === userData.confirmPassword){
+                    createNewAccount(userData.email, userData.password)
+                    .then(data => {
+                        setUser(data)
+                        userInfo(userData)
+                        setUserData(data)
+                    })
+                }
+                else{
+                    alert('Password and Confirm Password did not match')
+                }
+            }
+            else{
+                alert('Password must be 6 digit or higher')
+            }
         }
         else{
-            alert("Password and Confirm Password didn't match.")
+            alert('Please check the email is valid or not.')
         }
     }
 
@@ -73,11 +93,11 @@ const CreateAccount = () => {
         <div onSubmit={handleCreateAccount} className="createAccount">
             <form className="loginCreateForm detailFormArea" action="">
                 <h2 className="text-dark">Create an account</h2>
-                <input className="loginCreateFormInput" type="text" name="firstName" onBlur={handleValueChange} placeholder="First Name" required/>
-                <input className="loginCreateFormInput" type="text" name="lastName" onBlur={handleValueChange} placeholder="Last Name" required/>
-                <input className="loginCreateFormInput" type="text" name="email" onBlur={handleValueChange} placeholder="Username or Email" required/>
-                <input className="loginCreateFormInput" type="password" name="password" onBlur={handleValueChange} placeholder="Password" required/>
-                <input className="loginCreateFormInput" type="password" name="confirmPassword" onBlur={handleValueChange} placeholder="Confirm Password" required/>
+                <input className="loginCreateFormInput" type="text" name="firstName" onChange={handleValueChange} placeholder="First Name" required/>
+                <input className="loginCreateFormInput" type="text" name="lastName" onChange={handleValueChange} placeholder="Last Name" required/>
+                <input className="loginCreateFormInput" type="text" name="email" onChange={handleValueChange} placeholder="Username or Email" required/>
+                <input className="loginCreateFormInput" type="password" name="password" onChange={handleValueChange} placeholder="Password" required/>
+                <input className="loginCreateFormInput" type="password" name="confirmPassword" onChange={handleValueChange} placeholder="Confirm Password" required/>
                 {
                     userData.success ? <p className="text-success text-center m-0">Account created successfully. Please login</p> : <p className="text-danger text-center m-0">{userData.error}</p>
                 }
@@ -89,11 +109,11 @@ const CreateAccount = () => {
                     <hr style={{width: '45%', float: 'left'}}/><span>Or</span><hr style={{width: '45%', float: 'right'}}/>
                 </div>
                 <div onClick={handleGoogleSignIN} className="googleFbSignIn">
-                    <img className="googleFbImage" src="https://i.ibb.co/RCSRfVG/google.png" alt=""/>
+                    <img className="googleFbImage" src="https://i.ibb.co/68y93F9/google.png" alt=""/>
                     <p className="m-0 text-center">Continue with Google</p>
                 </div>
                 <div onClick={handleFbSignIn} className="googleFbSignIn">
-                    <img className="googleFbImage" src="https://i.ibb.co/f0R5VgT/fb.png" alt=""/>
+                    <img className="googleFbImage" src="https://i.ibb.co/ZhnqwJs/fb.png" alt=""/>
                     <p className="m-0 text-center">Continue with Facebook</p>
                 </div>
                 

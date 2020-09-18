@@ -21,7 +21,7 @@ const TouristSpotDetail = () => {
                 <h1 className="text-white spotName">{spotData.name}</h1>
                 <p className="spotDetail">{spotData.detail}</p>
             </div>
-            <form className="detailFormArea" action="">
+            <form className="detailFormArea">
                 <label htmlFor="origin" >Origin</label>
                 <input type="text" name="origin" id="origin" placeholder="Your Origin..." required/>
                 <label htmlFor="destination" >Destination</label>

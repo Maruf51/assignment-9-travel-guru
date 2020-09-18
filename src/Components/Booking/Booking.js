@@ -24,7 +24,7 @@ const Booking = () => {
                                     <p>{hotel.roomDetails}</p>
                                     <p className="mb-2">{hotel.detail}</p>
                                     <span className="hotel-rate d-flex align-items-center">
-                                        <img src="https://i.ibb.co/d5g4B6M/star-1.png" alt=""/>
+                                        <img src="https://i.ibb.co/mqWpx9k/star-1.png" alt=""/>
                                         <p className="m-0 pl-2 text-dark text-rate">{hotel.rating}</p>
                                         <p className="pl-5 text-dark hotel-price">${hotel.price}/</p>
                                         <p>night</p>
@@ -34,7 +34,7 @@ const Booking = () => {
                         }
                     </div>
                     <div className="map-area">
-                        <img className="mapImage" src="https://i.ibb.co/D9qfv9c/map.jpg" alt=""/>
+                        <img className="mapImage" src={spotData.hotelMapImg} alt=""/>
                     </div>
                 </div>
             </div>

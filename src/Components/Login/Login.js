@@ -21,7 +21,8 @@ const Login = () => {
         error: '',
         success: false,
     });
-    console.log(data)
+    // console.log(data)
+    console.log(user)
 
     const handleValueChange = (e) => {
             const newData = {...data}
@@ -89,11 +90,11 @@ const Login = () => {
                 <hr style={{width: '45%', float: 'left'}}/><span>Or</span><hr style={{width: '45%', float: 'right'}}/>
             </div>
             <div onClick={handleGoogleSignIN} className="googleFbSignIn">
-                <img className="googleFbImage" src="https://i.ibb.co/RCSRfVG/google.png" alt=""/>
+                <img className="googleFbImage" src="https://i.ibb.co/68y93F9/google.png" alt=""/>
                 <p className="m-0 text-center">Continue with Google</p>
             </div>
             <div onClick={handleFbSignIn} className="googleFbSignIn">
-                <img className="googleFbImage" src="https://i.ibb.co/f0R5VgT/fb.png" alt=""/>
+                <img className="googleFbImage" src="https://i.ibb.co/ZhnqwJs/fb.png" alt=""/>
                 <p className="m-0 text-center">Continue with Facebook</p>
             </div>
         </div>
