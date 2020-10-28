@@ -4,6 +4,8 @@
 
 ![Travel Guru](https://i.ibb.co/t3Pr1Zb/travel-guru.png)
 
+#### Features
+
 * A website for tourist to book any tourist spot and hotel.
 * Users can book any tourist spot and go there for a vacation. 
 * We can show them more cheapest hotel with a map.
